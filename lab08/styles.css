@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1 {
+    text-align: center;
+    background-color: rgb(141, 15, 15);
+    color: rgb(243, 237, 237);
+    font-size: 8rem;
+    margin: 0;
+}
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10rem;
+    
+}
+
+.fondo {
+    background-color: rgb(228, 228, 141);
+    width: 70%;
+    margin: auto;
+
+}
+
+.cajitas {
+    padding: 5rem, auto; 
+    margin: 6rem;
+}
+
+label {
+    font-size: 4rem;
+}
+
+.campo {
+    height: 3rem;
+    width: 10rem;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 2rem;
+}
+
+.opciones {
+    text-align: center;
+    font-size: 3rem;
+    background-color: rgb(117, 37, 37);
+    border-radius: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    color: wheat;
+}
+
+.enviar {
+    text-align: center;
+    border-radius: 2rem;
+    padding: 0.7rem 1.1rem;
+    font-size: 3rem;
+    background-color: rgb(117, 37, 37);
+    color: wheat;
+}
