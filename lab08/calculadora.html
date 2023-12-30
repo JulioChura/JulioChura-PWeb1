@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="cabecera">
+        <h1>Calculadora</h1>
+    </header>
+    
+    <form action="../cgi-bin/calculadora">
+        <label>Número 1</label>
+        <input type="text" name="num1">
+
+        <select name="signo">
+            <option value="+">Suma</option>
+            <option value="-">Resta</option>
+            <option value="*">Multiplicacion</option>
+            <option value="/">División</option>
+        </select>
+
+        <label>Número 2</label>
+        <input type="text" name="num2">
+        <input type="submit" name="expresion">
+    </form>
+</body>
+</html>
