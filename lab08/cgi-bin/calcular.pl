@@ -5,9 +5,9 @@ use CGI;
 
 my $q = CGI->new;
 print $q->header('text/html');
-my $num1 = $q->param('num1');
-my $num2 = $q->param('num2');
-my $signo = $q->param('signo');
+my $num1 = $q->param('cadena');
+my $num2;
+my $signo;
 
 print<<BLOCK;
 <!DOCTYPE html>
@@ -25,27 +25,20 @@ BLOCK
 #\(?: Coincide con un paréntesis abierto opcional.
 #(\d+): Captura uno o más dígitos (el número).
 #\)?: Coincide con un paréntesis cerrado opcional.
-#\s*$: Coincide con cero o más espacios en blanco al final de la cadena.
+#\s*: Coincide con cero o más espacios en blanco al final de la cadena.
 #$: Coincide con el final de la cadena.
 #Vamos a verificar la presencia de parentesis y validar la entrada
 
-if ($num1 =~ /^\s*\(?\s*(\d+)\s*\)?\s*$/  ) {
+if ($num1 =~ /^\s*\(?\s*(-?\d+)\s*\)?\s*([*+\/-])\s*\(?\s*(-?\d+)\s*\)?\s*/  ) {
     $num1 = $1;
+    $signo = $2;
+    $num2 = $3;
 } else {
     print "<h1> Ingrese un valor valido!</h1>\n";
     print '<div class="enlace"><a href="../calculadora.html">Regresar</a></dive>';
     print "</body></html>"; 
     exit 1;
     
-}
-
-if ($num2 =~ /^\s*\(?\s*(\d+)\s*\)?\s*$/ ) {
-    $num2 = $1;
-} else {
-    print "<h1> Ingrese un valor valido!</h1>\n";
-    print '<div class="enlace"><a href="../calculadora.html">Regresar</a></dive>';
-    print "</body></html>";  
-    exit 1;
 }
 
 my $resultado;
