@@ -13,7 +13,7 @@ form {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 10rem;
+    padding: 2rem;
     
 }
 
@@ -21,6 +21,7 @@ form {
     background-color: rgb(228, 228, 141);
     width: 70%;
     margin: auto;
+    border-radius: 2rem;
 
 }
 
@@ -62,4 +63,23 @@ label {
     font-size: 3rem;
     background-color: rgb(117, 37, 37);
     color: wheat;
+    margin-bottom: 4rem;
+}
+.enlace {
+    margin: 0 auto;
+    background-color: yellow;
+    text-align: center;
+    width: 18rem;
+    height: 5rem;
+    border-radius: 2rem;
+}
+a {
+    text-decoration: none;
+    font-size: 4rem;
+}
+.enlace:hover {
+    background-color: rgb(0, 0, 0);
+}
+a:hover{
+    color:white
 }
