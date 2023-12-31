@@ -14,21 +14,8 @@
     <div class="fondo">
         <form action="cgi-bin/calcular.pl" method="GET">
             <div class="cajitas">
-                <label>Número 1:</label>
-                <input type="text" name="num1" class="campo">
-            </div>
-            
-    
-            <select name="signo" class="opciones">
-                <option value="+">Suma</option>
-                <option value="-">Resta</option>
-                <option value="*">Multiplicacion</option>
-                <option value="/">División</option>
-            </select>
-    
-            <div class="cajitas">
-                <label>Número 2:</label>
-                <input type="text" name="num2" class="campo">
+                <label>Expresión:</label>
+                <input type="text" name="cadena" class="campo">
             </div>
             
             <input type="submit" value="Calcular" class="enviar">
