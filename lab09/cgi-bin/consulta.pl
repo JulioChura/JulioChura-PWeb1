@@ -27,13 +27,16 @@ my %coincidencias;
 #^(\d{3})? : para que calzen tres numeros
 #(.+) :Busca cualquier palabra o frase
 
-my $archivo = 'Programas_de_Universidad.csv';
+my $archivo = 'Programas_de_Universidades.csv';
 open my $IN, '<', $archivo or die "<h1>No se pudo abrir el archivo: $!</h1>\n";
 
-while (my $line = <$IN>) {
+my $llave;
+my $cadena;
+my $line;
+while ($line = <$IN>) {
     if ( $line =~ /^(\d{3})|(.+)/ ) {
-        my $llave = $1;
-        my $cadena = $2;
+        $llave = $1;
+        $cadena = $2;
     } if ( $cadena =~ /$name\|(.*)$periodo(\|.*){5}\|$departamento(\|.*){5}\|$denominacion(.*)/) {
         $coincidencias{$llave} = $cadena; 
     }
@@ -43,14 +46,9 @@ while (my $line = <$IN>) {
 foreach my $var ( %coincidencias) {
     print "<h1> $var </h1>\n"
 }
+print <<HTML;
 </body>
 </html>
 HTML
 
-
-#if (!($name eq "") && !($periodo eq "") && !($departamento eq "") && !($denominacion eq "") ) {
-#   open(IN, "Programas_de_Universidad.txt") or die "<h1>ERROR: open file</h1>\n";
-#   } else {
-#   print "<h1>Llene todos los campos!</h1>"
-#}
 
