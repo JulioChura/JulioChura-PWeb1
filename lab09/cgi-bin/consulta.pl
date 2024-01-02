@@ -3,15 +3,17 @@ use strict;
 use warnings;
 use CGI;
 use utf8;
-
+use Text::Unaccent;
 
 my $q = CGI->new;
 print $q->header('text/html');
 
-my $name = $q->param("nombre") || "";
-my $periodo = $q->param("periodo") || "";
-my $departamento = $q->param("departamento") || ""; 
-my $denominacion = $q->param("denominacion") || "";
+# my $varSinAcento = unac_string("UTF-8", $cadena);
+# Esa funcion quita acentos
+my $name = unac_string("UTF-8", $q->param("nombre") || "");
+my $periodo = unac_string("UTF-8", $q->param("periodo") || "");
+my $departamento = unac_string("UTF-8", $q->param("departamento") || ""); 
+my $denominacion = unac_string("UTF-8", $q->param("denominacion") || "");
 
 print<<BLOCK;
 <!DOCTYPE html>
