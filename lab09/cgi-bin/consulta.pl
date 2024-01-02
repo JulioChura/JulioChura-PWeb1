@@ -34,12 +34,12 @@ my $llave;
 my $cadena;
 my $line;
 while ($line = <$IN>) {
-    if ( $line =~ /^(\d{3})|(.+)/ ) {
+    if ( $line =~ /^(\d{3})\|(.+)/ ) {
         $llave = $1;
         $cadena = $2;
     } if ( $cadena =~ /$name\|(.*)$periodo(\|.*){5}\|$departamento(\|.*){5}\|$denominacion(.*)/) {
         $coincidencias{$llave} = $cadena; 
-    }
+    } 
 
 }
 
