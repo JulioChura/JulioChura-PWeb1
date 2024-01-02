@@ -25,10 +25,16 @@ BLOCK
 my %coincidencias;
 my $fraseBusqueda = join('',$name, $periodo, $departamento, $denominacion);
 
+
+#^(\d{3})? : para que calzen tres numeros
+#(.+) :Busca cualquier palabra o frase
 while (my $line = <IN>) {
-    if ( ) {
+    if ( $line =~ /^(\d{3})|(.+)/ ) {
+        $coincidencias{$1} = $2;
+    } if ( $coincidencias{$1} =~ /$name\|(.*)$periodo(\|.*){5}\| /) {
 
     }
+
 }
 
 #if (!($name eq "") && !($periodo eq "") && !($departamento eq "") && !($denominacion eq "") ) {
