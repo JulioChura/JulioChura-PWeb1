@@ -22,9 +22,18 @@ print<<BLOCK;
 <body>
 BLOCK
 
-if (!($name eq "") && !($periodo eq "") && !($departamento eq "") && !($denominacion eq "") ) {
+my %coincidencias;
+my $fraseBusqueda = join('',$name, $periodo, $departamento, $denominacion);
 
-} else {
-    print "<h1>Llene todos los campos!</h1>"
+while (my $line = <IN>) {
+    if ( ) {
+
+    }
 }
+
+#if (!($name eq "") && !($periodo eq "") && !($departamento eq "") && !($denominacion eq "") ) {
+#   open(IN, "Programas_de_Universidad.txt") or die "<h1>ERROR: open file</h1>\n";
+#   } else {
+#   print "<h1>Llene todos los campos!</h1>"
+#}
 
