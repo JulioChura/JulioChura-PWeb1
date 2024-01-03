@@ -1,0 +1,35 @@
+img {
+    width: 100%
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.slide {
+    width: 100%;
+    max-width: 100rem;
+    height: 72rem;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.slide ul {
+    display: flex;
+    padding: 0;
+    width: 40rem;
+    animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
+    object-fit: fill;
+}
+
+@keyframes slide {
+    0% (margin-)
+}
