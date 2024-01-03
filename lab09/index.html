@@ -9,41 +9,46 @@
 <body>
     <h1>Página de consulta de universidades</h1>
 
-    <div class="container">
-        <div class="slide">
+
+    <div class="fondo">
+        <div class="slider-frame">
             <ul>
-                <li> <img src="img/1.jpg" alt=""></li>
                 <li> <img src="img/2.png" alt=""></li>
                 <li> <img src="img/3.jpg" alt=""></li>
                 <li> <img src="img/4.jpeg" alt=""></li>
                 <li> <img src="img/5.jpg" alt=""></li>
-                <li> <img src="img/6.jpg" alt=""></li>
-
+    
             </ul>
+        
         </div>
-
+        <div class="contenedor-form">
+            <form action="cgi-bin/consulta.pl" method="get" class="formulario-boton">
+                    <div class="label-campos">
+                        <div>
+                            <label>Nombre de la universidad</label><br>
+                            <input type="text" name="nombre">
+                        </div>
+                        <div>
+                            <label>Periodo de licenciamiento</label><br>
+                            <input type="text" name="periodo">
+                        </div>
+                       
+                        <div>
+                            <label>Denominación Programa</label><br>
+                            <input type="text" name="denominacion">
+                        </div>
+        
+                        <div>
+                            <label>Departamento local</label><br>
+                            <input type="text" name="departamento">
+                        </div>
+                    </div>
+                    
+                    <input type="submit" value="enviar" class="enviar">
+            </form>      
+        </div>
     </div>
 
-    <div>
-        <form action="cgi-bin/consulta.pl" method="get">
-            <div>
-                <label>Nombre de la universidad</label>
-                <input type="text" name="nombre">
-            </div>
-            <div>
-                <label>Periodo de licenciamiento</label>
-                <input type="text" name="periodo">
-            </div>
-            <div>
-                <label>Departamento local</label>
-                <input type="text" name="departamento">
-            </div>
-            <div>
-                <label>Denominación Programa</label>
-                <input type="text" name="denominacion">
-            </div>
-            <input type="submit" value="enviar">
-        </form>
-    </div>
+    
 </body>
 </html>
