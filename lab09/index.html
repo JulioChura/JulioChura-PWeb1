@@ -9,7 +9,7 @@
     <h1>Página de consulta de universidades</h1>
 
     <div>
-        <form action="cgi-bin/consulta.pl">
+        <form action="cgi-bin/consulta.pl" method="get">
             <div>
                 <label>Nombre de la universidad</label>
                 <input type="text" name="nombre">
@@ -26,7 +26,7 @@
                 <label>Denominación Programa</label>
                 <input type="text" name="denominacion">
             </div>
-
+            <input type="submit" value="enviar">
         </form>
     </div>
 </body>
