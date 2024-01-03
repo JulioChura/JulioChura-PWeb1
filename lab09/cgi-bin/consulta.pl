@@ -2,18 +2,15 @@
 use strict;
 use warnings;
 use CGI;
-use utf8;
-use Text::Unaccent;
 
+#probando
 my $q = CGI->new;
 print $q->header('text/html');
 
-# my $varSinAcento = unac_string("UTF-8", $cadena);
-# Esa funcion quita acentos
-my $name = unac_string("UTF-8", $q->param("nombre") || "");
-my $periodo = unac_string("UTF-8", $q->param("periodo") || "");
-my $departamento = unac_string("UTF-8", $q->param("departamento") || ""); 
-my $denominacion = unac_string("UTF-8", $q->param("denominacion") || "");
+my $name = $q->param("nombre") || "";
+my $periodo = $q->param("periodo") || "";
+my $departamento = $q->param("departamento") || ""; 
+my $denominacion = $q->param("denominacion") || "";
 
 print<<BLOCK;
 <!DOCTYPE html>
@@ -28,21 +25,21 @@ BLOCK
 
 my %coincidencias;
 
+#^(\d{3})? : para que calzen tres numeros
+#(.+) :Busca cualquier palabra o frase
 
 my $archivo = 'Programas_de_Universidades.csv';
 open my $IN, '<', $archivo or die "<h1>No se pudo abrir el archivo: $!</h1>\n";
 
-my $valor = 0;
 my $llave;
 my $cadena;
 my $line;
 while ($line = <$IN>) {
     if ( $line =~ /^(\d{3})\|(.+)/ ) {
+        $llave = $1;
         $cadena = $2;
-    } if ( $cadena =~ /$name?\|(.*)$periodo?(\|.*){5}\|$departamento?(\|.*){5}\|$denominacion?(.*)/) {
-        $llave = $valor;
-        $coincidencias{$llave} = $cadena;
-        $valor = $valor + 1; 
+    } if ( $cadena =~ /$name\|(.*)$periodo(\|.*){5}\|$departamento(\|.*){5}\|$denominacion(.*)/) {
+        $coincidencias{$llave} = $cadena; 
     } 
 
 }
