@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de consultas</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h1>Página de consulta de universidades</h1>
@@ -17,38 +17,32 @@
                 <li> <img src="img/3.jpg" alt=""></li>
                 <li> <img src="img/4.jpeg" alt=""></li>
                 <li> <img src="img/5.jpg" alt=""></li>
-    
             </ul>
-        
         </div>
         <div class="contenedor-form">
             <form action="cgi-bin/consulta.pl" method="get" class="formulario-boton">
-                    <div class="label-campos">
-                        <div>
-                            <label>Nombre de la universidad</label><br>
-                            <input type="text" name="nombre" class="campo">
-                        </div>
-                        <div>
-                            <label>Periodo de licenciamiento</label><br>
-                            <input type="text" name="periodo" class="campo" >
-                        </div>
-                       
-                        <div>
-                            <label>Denominación Programa</label><br>
-                            <input type="text" name="denominacion" class="campo">
-                        </div>
-        
-                        <div>
-                            <label>Departamento local</label><br>
-                            <input type="text" name="departamento" class="campo">
-                        </div>
+                <div class="label-campos">
+                    <div>
+                        <label>Nombre de la universidad</label><br>
+                        <input type="text" name="nombre" class="campo">
                     </div>
-                    
-                    <input type="submit" value="enviar" class="enviar">
+                    <div>
+                        <label>Periodo de licenciamiento</label><br>
+                        <input type="text" name="periodo" class="campo" >
+                    </div>  
+                    <div>
+                        <label>Denominación Programa</label><br>
+                        <input type="text" name="denominacion" class="campo">
+                    </div>
+        
+                    <div>
+                        <label>Departamento local</label><br>
+                        <input type="text" name="departamento" class="campo">
+                    </div>
+                </div>  
+                <input type="submit" value="Enviar" class="enviar">
             </form>      
         </div>
     </div>
-
-    
 </body>
 </html>

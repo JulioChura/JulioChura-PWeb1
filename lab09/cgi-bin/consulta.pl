@@ -6,7 +6,6 @@ use utf8;
 
 
 
-
 my $q = CGI->new;
 print $q->header('text/html');
 
@@ -19,11 +18,11 @@ print<<BLOCK;
 <!DOCTYPE html>
 <html>
  <head>
- <meta charset="utf-8">
+ <meta charset="UTF-8">
  <link rel="stylesheet" type="text/css" href="../css/styles.css">
  <title>Resultados </title>
  </head>
-<body>
+<body class="fondo-resultados">
 BLOCK
 
 my %coincidencias;
@@ -44,13 +43,15 @@ while ($line = <$IN>) {
         $coincidencias{$llave} = $line;
         $valor = $valor + 1; 
     } 
-
+    $cadena ="";
 }
-
 close $IN;
-foreach my $var ( %coincidencias) {
-    print "<h1> $var </h1>\n"
+
+print "<ul>";
+foreach my $var (values %coincidencias) {
+    print "<li class='items'> $var </li><br>\n";
 }
+print "</ul>";
 print <<HTML;
 </body>
 </html>
