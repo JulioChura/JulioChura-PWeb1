@@ -4,8 +4,6 @@ use warnings;
 use CGI;
 use utf8;
 
-
-
 my $q = CGI->new;
 print $q->header('text/html');
 
@@ -26,7 +24,6 @@ print<<BLOCK;
 BLOCK
 
 my %coincidencias;
-
 
 my $archivo = 'Programas_de_Universidades.csv';
 open my $IN, '<', $archivo or die "<h1>No se pudo abrir el archivo: $!</h1>\n";
