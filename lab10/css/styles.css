@@ -1,0 +1,31 @@
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.fondo-resultados {
+    background-color: pink;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto; 
+    border-collapse: collapse; 
+}
+td {
+    background-color: black;
+    color: wheat;
+}
+th, td {
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    text-align: left; 
+}
+
+th {
+    background-color: #f2f2f2; 
+}
+
+td:hover {
+    background-color: #4b1717; 
+}
