@@ -28,3 +28,41 @@ print<<BLOCK;
 BLOCK
 
 #Se hace la consulta
+my $year = 1985;
+my $sth = $dbh->prepare("SELECT * FROM  Movie WHERE Year=?");
+$sth->execute($year);
+
+if (my @row =  $sth->fetchrow_array) {
+    while (@row) {
+        print<<BLOCK;
+        <table>
+            <tr>
+                <th>MovieID</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Score</th>
+                <th>Votes</th>
+            </tr>
+            
+            <tr>
+                <td>$row[0]</td>
+                <td>$row[1]</td>
+                <td>$row[2]</td>
+                <td>$row[3]</td>
+                <td>$row[4]</td>
+            </tr>
+        </table>
+BLOCK
+    }
+	
+
+} else {
+    print "<p>No se encontraron resultados";
+}
+print<<BLOCK;
+</body>
+</html>
+BLOCK
+
+$sth->finish;
+$dbh->disconnect;
