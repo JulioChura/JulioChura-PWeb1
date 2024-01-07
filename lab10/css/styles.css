@@ -29,3 +29,10 @@ th {
 td:hover {
     background-color: #4b1717; 
 }
+
+.fondoPrincipal {
+    background-image: url('../Ejercicio4/poster.jpg');
+    background-size: cover;
+    margin: 0; 
+    padding: 0; 
+}
