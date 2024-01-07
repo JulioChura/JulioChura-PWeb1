@@ -24,17 +24,16 @@ print<<BLOCK;
  <title>Resultados </title>
  </head>
 <body class="fondo-resultados">
-<h1>Películas en el año 1985</h1>
+<h1>Películas mejor rankeadas</h1>
 BLOCK
 
 #Se hace la consulta
-my $year = 1985;
-my $sth = $dbh->prepare("SELECT * FROM  Movie WHERE Year=?");
-$sth->execute($year);
+my $score = 7;
+my $votes = 5000;
+my $sth = $dbh->prepare("SELECT * FROM  Movie WHERE Score > ? and Votes > ?");
+$sth->execute($score, $votes );
 
-if (my @row =  $sth->fetchrow_array) {
-    while (@row) {
-        print<<BLOCK;
+print<<BLOCK;
         <table>
             <tr>
                 <th>MovieID</th>
@@ -43,22 +42,22 @@ if (my @row =  $sth->fetchrow_array) {
                 <th>Score</th>
                 <th>Votes</th>
             </tr>
-            
-            <tr>
-                <td>$row[0]</td>
-                <td>$row[1]</td>
-                <td>$row[2]</td>
-                <td>$row[3]</td>
-                <td>$row[4]</td>
-            </tr>
-        </table>
 BLOCK
-    }
-	
 
-} else {
-    print "<p>No se encontraron resultados";
+while (my @row =  $sth->fetchrow_array) {
+    print<<BLOCK;      
+    <tr>
+        <td>$row[0]</td>
+        <td>$row[1]</td>
+        <td>$row[2]</td>
+        <td>$row[3]</td>
+        <td>$row[4]</td>
+    </tr>
+BLOCK
 }
+
+print "</table>\n";
+
 print<<BLOCK;
 </body>
 </html>
