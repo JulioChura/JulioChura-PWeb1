@@ -33,7 +33,7 @@ print<<BLOCK;
             Buscador de pelicula
         </h1>
         <div class="formulario">
-            <input type="text" class="campoLlenar" readonly>
+            <input type="text" class="campoLlenar" placeholder="$year" readonly>
             <a href="../index.html" class='enviar'>Limpiar</a>
         </div>
     </form>
