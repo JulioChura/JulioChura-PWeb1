@@ -1,6 +1,8 @@
-console.log("Hola mundo");
-var num1 = 3;
-var num2 = 2;
-var respuesta = num1 + num2;
-console.log("La respuesta es "+ respuesta);
-
+var num = 56;
+if (num == 8) {
+    console.log("Si es 8");
+} else if (num % 2 == 0) {
+    console.log("Es par ");
+} else {
+    console.log("No es 8 ni es par");
+}
