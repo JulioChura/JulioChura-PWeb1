@@ -1,6 +1,6 @@
 console.log("Hola mundo");
-var variable = "Hola";
-console.log(variable);
-const contante = 12;
-console.log(constante);
-variable = true;
+var num1 = 3;
+var num2 = 2;
+var respuesta = num1 + num2;
+console.log("La respuesta es "+ respuesta);
+
