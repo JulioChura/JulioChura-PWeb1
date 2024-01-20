@@ -1,3 +1,11 @@
-for (var i = 0; i < 12787; i++) {
-    console.log(i);
+var resultado = "capucchino"
+function cafetera(ing1) {
+    if (ing1=="leche") {
+        console.log(resultado);
+        return resultado;
+    } else {
+        console.log("Incorrecto");
+    }
 }
+
+cafetera("leche");
