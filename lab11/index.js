@@ -1,6 +1,3 @@
-var i = 0;
-
-while (i <10) {
+for (var i = 0; i < 12787; i++) {
     console.log(i);
-    i++;
 }
